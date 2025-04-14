@@ -1,144 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: #f9f8f6;
   margin: 0;
-  background-color: #f9f9f6;
+  padding: 0;
   color: #333;
 }
 
 .site-header {
-  background: #2e2a19;
-  color: #fff;
-  padding: 15px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-color: #2e2e2e;
+  color: #fff;
 }
 
 .site-logo {
-  max-width: 150px;
-  margin: 0 auto;
+  width: 140px;
 }
 
 .nav-list {
   list-style: none;
   padding: 0;
-  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .nav-link {
-  color: #fefefe;
+  color: #fff;
   text-decoration: none;
-  display: block;
-  margin: 8px 0;
-  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .hero-section {
-  padding: 30px 15px;
-  background: linear-gradient(to bottom, #6d5c2f, #a0904e);
-  color: white;
+  padding: 2rem 1rem;
   text-align: center;
+  background: #dfe6d5;
 }
 
 .hero-title {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-description {
-  font-size: 1.1em;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .cta-button {
-  background-color: #ffd166;
-  color: #2e2a19;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  background: #446c2c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .services {
-  padding: 25px;
-  background: white;
+  padding: 2rem 1rem;
+  background: #f0f0f0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 1.8em;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .service-grid {
-  display: block;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .service-item {
-  margin-bottom: 25px;
+  text-align: center;
 }
 
 .service-image {
-  width: 100%;
-  max-width: 240px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 350px;
+  border-radius: 8px;
 }
 
 .gallery-container {
+  padding: 2rem 1rem;
+  background: #fff;
   text-align: center;
-  padding: 20px;
 }
 
 .gallery-item {
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .gallery-image {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.gallery-caption {
-  font-size: 0.9em;
-  margin-top: 8px;
+  width: 90%;
+  border-radius: 8px;
 }
 
 .contact {
-  padding: 25px;
-  background-color: #f0f0e9;
-  text-align: center;
+  padding: 2rem 1rem;
+  background: #e2efe2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .input-field {
-  width: 100%;
-  max-width: 400px;
-  margin: 12px auto;
-  padding: 12px;
+  padding: 0.8rem;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
 }
 
 .site-footer {
-  background-color: #2e2a19;
+  background-color: #2e2e2e;
   color: white;
-  padding: 20px;
   text-align: center;
+  padding: 1rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
 }
 
 .footer-nav-link {
-  color: #ccc;
-  margin: 0 10px;
+  color: white;
   text-decoration: none;
+}
+
+.footer-social {
+  margin: 1rem 0;
 }
 
 .social-icon img {
   width: 30px;
-  margin: 10px;
+  margin: 0 0.5rem;
 }
