@@ -25,12 +25,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* overlay for readability */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* dark overlay for readability */
   text-align: center;
+  height: 400px; /* Set header height */
+  position: relative; /* Ensure overlay works */
 }
 
 .site-header .logo {
-  width: 100px;
+  width: 120px;
   height: auto;
   margin-bottom: 1rem;
   border-radius: 12px;
@@ -45,6 +47,18 @@ body {
   font-size: 1.2rem;
   color: #e0e0e0;
   margin-bottom: 1em;
+}
+
+/* Dark overlay for header */
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* darkens the background for contrast */
+  z-index: -1; /* Behind content */
 }
 
 /* Sections */
