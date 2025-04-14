@@ -1,50 +1,46 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fdfdfb;
-  color: #333;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fffdf8;
+  color: #333;
   text-align: center;
 }
 
 .site-header {
-  background: #5e4b3c;
-  color: white;
+  background: #4a392a;
+  color: #fff;
   padding: 1em;
 }
 
 .logo {
-  width: 80px;
+  width: 70px;
   display: block;
   margin: 0 auto 0.5em;
 }
 
-.intro-text,
-.services-text,
-.mole-focus {
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+.intro-text, .mole-focus {
   padding: 1em;
-  margin: 0 auto;
 }
 
 .photo-gallery {
   padding: 1em;
+  background: #f2eee7;
 }
 
 .gallery-grid {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-}
-
-.gallery-grid figure {
-  margin: 0;
+  align-items: center;
+  gap: 1.2em;
 }
 
 .gallery-grid img {
   width: 90%;
   max-width: 350px;
-  margin: 0 auto;
-  display: block;
   border-radius: 8px;
 }
 
@@ -55,7 +51,7 @@ figcaption {
 }
 
 .site-footer {
-  background: #ddd;
+  background: #e0e0e0;
   padding: 1em;
   font-size: 0.9em;
 }
