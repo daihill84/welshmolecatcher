@@ -1,75 +1,75 @@
-/* Mobile Styles (max-width: 768px) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f9f9f6;
+  color: #333;
 }
 
 .site-header {
-  background-color: #5a4f1c;
-  color: white;
+  background: #2e2a19;
+  color: #fff;
   padding: 15px;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .site-logo {
-  max-width: 100%;
-  height: auto;
-}
-
-.site-nav {
-  margin-top: 10px;
+  max-width: 150px;
+  margin: 0 auto;
 }
 
 .nav-list {
   list-style: none;
   padding: 0;
-  text-align: center;
+  margin: 10px 0;
 }
 
 .nav-link {
+  color: #fefefe;
   text-decoration: none;
-  color: white;
-  margin: 0 10px;
-  font-size: 16px;
+  display: block;
+  margin: 8px 0;
+  font-weight: 600;
 }
 
 .hero-section {
-  background-color: #8f7f43;
-  padding: 20px;
-  text-align: center;
+  padding: 30px 15px;
+  background: linear-gradient(to bottom, #6d5c2f, #a0904e);
   color: white;
+  text-align: center;
 }
 
 .hero-title {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
 .hero-description {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+  font-size: 1.1em;
+  margin-bottom: 20px;
 }
 
 .cta-button {
-  background-color: #f4a261;
-  color: white;
-  padding: 10px 20px;
-  border: none;
+  background-color: #ffd166;
+  color: #2e2a19;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .services {
-  padding: 20px;
-  background-color: #fff;
+  padding: 25px;
+  background: white;
 }
 
 .section-title {
-  font-size: 2em;
   text-align: center;
+  font-size: 1.8em;
   margin-bottom: 20px;
 }
 
@@ -79,80 +79,66 @@ body {
 }
 
 .service-item {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .service-image {
   width: 100%;
-  max-width: 200px;
-  height: auto;
+  max-width: 240px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .gallery-container {
-  display: block;
   text-align: center;
+  padding: 20px;
 }
 
 .gallery-item {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .gallery-image {
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  max-width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .gallery-caption {
-  font-size: 1em;
-  color: #333;
-  margin-top: 10px;
+  font-size: 0.9em;
+  margin-top: 8px;
 }
 
 .contact {
-  padding: 20px;
-  background-color: #fff;
+  padding: 25px;
+  background-color: #f0f0e9;
   text-align: center;
-}
-
-.contact-form {
-  display: block;
-  max-width: 400px;
-  margin: 0 auto;
 }
 
 .input-field {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  max-width: 400px;
+  margin: 12px auto;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .site-footer {
-  background-color: #5a4f1c;
+  background-color: #2e2a19;
   color: white;
-  text-align: center;
   padding: 20px;
-}
-
-.footer-nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  text-align: center;
 }
 
 .footer-nav-link {
-  text-decoration: none;
-  color: white;
+  color: #ccc;
   margin: 0 10px;
-}
-
-.footer-social {
-  margin-top: 15px;
+  text-decoration: none;
 }
 
 .social-icon img {
   width: 30px;
-  margin: 0 10px;
+  margin: 10px;
 }
