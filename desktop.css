@@ -1,194 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: #f9f8f6;
   margin: 0;
-  background-color: #f9f9f6;
-  color: #222;
+  padding: 0;
+  color: #333;
 }
 
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2e2a19;
-  color: white;
-  padding: 20px 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  background-color: #2e2e2e;
+  color: #fff;
 }
 
 .site-logo {
-  max-width: 160px;
+  width: 150px;
 }
 
 .nav-list {
   display: flex;
-  gap: 30px;
+  gap: 2rem;
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 
 .nav-link {
-  color: #fefefe;
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
-  transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-  color: #ffd166;
+  font-size: 1.1rem;
 }
 
 .hero-section {
-  background: linear-gradient(to right, #6d5c2f, #a0904e);
-  color: white;
-  padding: 80px 50px;
+  padding: 4rem 2rem;
   text-align: center;
+  background: #dfe6d5;
 }
 
 .hero-title {
-  font-size: 3em;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-description {
-  font-size: 1.4em;
-  margin-bottom: 25px;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .cta-button {
-  background-color: #ffd166;
-  color: #2e2a19;
-  padding: 14px 32px;
-  font-size: 1.1em;
+  background: #446c2c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #ffcb47;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .services {
-  background-color: #fff;
-  padding: 60px;
+  padding: 4rem 2rem;
+  background: #f0f0f0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .service-grid {
   display: flex;
-  gap: 40px;
   justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .service-item {
-  flex: 0 0 28%;
   text-align: center;
+  max-width: 300px;
 }
 
 .service-image {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.service-image:hover {
-  transform: scale(1.03);
+  border-radius: 8px;
 }
 
 .gallery-container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 60px;
-  background-color: #f0f0e9;
-}
-
-.gallery-item {
-  width: 30%;
+  padding: 4rem 2rem;
+  background: #fff;
   text-align: center;
 }
 
+.gallery-item {
+  display: inline-block;
+  margin: 1rem;
+}
+
 .gallery-image {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-  transform: scale(1.03);
-}
-
-.gallery-caption {
-  font-size: 1em;
-  margin-top: 10px;
-  color: #444;
+  width: 320px;
+  border-radius: 8px;
 }
 
 .contact {
-  padding: 60px;
-  background-color: #fff;
+  padding: 4rem 2rem;
+  background: #e2efe2;
   text-align: center;
 }
 
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .input-field {
-  width: 100%;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 1.1rem;
+  width: 100%;
 }
 
 .site-footer {
-  background-color: #2e2a19;
+  background-color: #2e2e2e;
   color: white;
   text-align: center;
-  padding: 30px;
+  padding: 2rem;
 }
 
 .footer-nav-list {
+  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 2rem;
+  margin: 1rem 0;
 }
 
 .footer-nav-link {
-  color: #ccc;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-nav-link:hover {
-  color: #ffd166;
 }
 
 .footer-social {
-  margin-top: 20px;
+  margin: 1rem 0;
 }
 
 .social-icon img {
   width: 40px;
-  margin: 0 10px;
+  margin: 0 0.5rem;
 }
