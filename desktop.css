@@ -1,108 +1,120 @@
-/* Desktop Styles (min-width: 769px) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f9f9f6;
+  color: #222;
 }
 
 .site-header {
-  background-color: #5a4f1c;
-  color: white;
-  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #2e2a19;
+  color: white;
+  padding: 20px 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .site-logo {
-  max-width: 150px;
-  height: auto;
-}
-
-.site-nav {
-  margin-top: 0;
+  max-width: 160px;
 }
 
 .nav-list {
-  list-style: none;
-  padding: 0;
   display: flex;
+  gap: 30px;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .nav-link {
+  color: #fefefe;
   text-decoration: none;
-  color: white;
-  margin: 0 20px;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 1em;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffd166;
 }
 
 .hero-section {
-  background-color: #8f7f43;
-  padding: 50px;
-  text-align: center;
+  background: linear-gradient(to right, #6d5c2f, #a0904e);
   color: white;
+  padding: 80px 50px;
+  text-align: center;
 }
 
 .hero-title {
-  font-size: 3.5em;
-  margin-bottom: 20px;
+  font-size: 3em;
+  margin-bottom: 15px;
 }
 
 .hero-description {
-  font-size: 1.5em;
-  margin-bottom: 30px;
+  font-size: 1.4em;
+  margin-bottom: 25px;
 }
 
 .cta-button {
-  background-color: #f4a261;
-  color: white;
-  padding: 15px 30px;
-  border: none;
+  background-color: #ffd166;
+  color: #2e2a19;
+  padding: 14px 32px;
+  font-size: 1.1em;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 18px;
-  border-radius: 5px;
+  font-weight: 700;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffcb47;
 }
 
 .services {
-  padding: 40px;
   background-color: #fff;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  padding: 60px;
 }
 
 .section-title {
-  font-size: 2.5em;
   text-align: center;
-  margin-bottom: 30px;
-  width: 100%;
+  font-size: 2.5em;
+  margin-bottom: 40px;
 }
 
 .service-grid {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .service-item {
-  flex-basis: 30%;
+  flex: 0 0 28%;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .service-image {
   width: 100%;
-  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-image:hover {
+  transform: scale(1.03);
 }
 
 .gallery-container {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 30px;
+  padding: 60px;
+  background-color: #f0f0e9;
 }
 
 .gallery-item {
@@ -112,24 +124,28 @@ body {
 
 .gallery-image {
   width: 100%;
-  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
 }
 
 .gallery-caption {
-  font-size: 1.1em;
-  color: #333;
+  font-size: 1em;
   margin-top: 10px;
+  color: #444;
 }
 
 .contact {
-  padding: 40px;
+  padding: 60px;
   background-color: #fff;
   text-align: center;
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -138,37 +154,41 @@ body {
   width: 100%;
   padding: 15px;
   margin: 15px 0;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .site-footer {
-  background-color: #5a4f1c;
+  background-color: #2e2a19;
   color: white;
   text-align: center;
   padding: 30px;
 }
 
 .footer-nav-list {
-  list-style: none;
-  padding: 0;
   display: flex;
   justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-nav-link {
+  color: #ccc;
   text-decoration: none;
-  color: white;
-  margin: 0 20px;
+  font-weight: 500;
+}
+
+.footer-nav-link:hover {
+  color: #ffd166;
 }
 
 .footer-social {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
 }
 
 .social-icon img {
   width: 40px;
-  margin: 0 15px;
+  margin: 0 10px;
 }
