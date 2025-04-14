@@ -3,100 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welsh Town and Country offers expert mole catching services for farms, gardens, and homes across Wales. Trusted, family-run, and environmentally friendly pest control solutions.">
-  <meta name="keywords" content="mole catching, pest control, farm pest control, Welsh mole catcher, traditional mole trapping, eco-friendly pest control, rodent control, wildlife management, farm pest solutions, Welsh pest control">
-  <meta name="author" content="David Hill, Welsh Town and Country">
-  <meta property="og:title" content="Mole Catching in Wales - Welsh Town and Country">
-  <meta property="og:description" content="Expert mole control for farms and gardens in Wales. Environmentally friendly, traditional methods of mole catching.">
-  <meta property="og:image" content="farm_john_mole.jpg">
-  <meta property="og:url" content="https://www.welshmolecatcher.co.uk">
-  <meta property="og:type" content="website">
-  <title>Welsh Town and Country - Expert Mole Catching in Wales</title>
+  <meta name="description" content="Expert mole and rat control services for farms, houses, and gardens across South Wales. Environmentally friendly, professional pest solutions.">
+  <meta name="keywords" content="mole control South Wales, farm pest control, rat removal, pest services Brecon, molecatcher Swansea, pest control Neath, rodent control Ammanford, environmentally friendly pest control, Welsh molecatcher">
+  <meta name="author" content="Welsh Town and Country">
+  <title>Welsh Mole Catcher - Farm & House Pest Control in South Wales</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
-  <link rel="stylesheet" href="desktop.css" media="(min-width: 769px)">
+  <link rel="apple-touch-icon" href="apple_touch_icon.png">
+  <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)">
+  <link rel="stylesheet" href="desktop.css" media="only screen and (min-width: 769px)">
 </head>
 <body>
-  <header>
+  <header class="site-header">
+    <img src="logo.png" alt="Welsh Town and Country Logo" class="site-logo">
     <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Our Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav-list">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="home">
-      <h1>Welcome to Welsh Town and Country - Mole Catching Experts</h1>
-      <p>Your trusted partner for mole control on farms, gardens, and homes across Wales. We offer traditional and eco-friendly methods for safe, effective pest management.</p>
-      <img src="IMG-20240515-WA0027.jpg" alt="Mole catching in action" title="Mole catching in action on a Welsh farm" loading="lazy">
-    </section>
+  <section class="hero-section">
+    <h1 class="hero-title">Professional Mole & Rat Control</h1>
+    <p class="hero-description">Serving farms, homes & gardens across South Wales</p>
+    <a href="#contact" class="cta-button">Book Now</a>
+  </section>
 
-    <section id="about">
-      <h2>About Us</h2>
-      <p>We are a family-run business with decades of experience in mole catching and pest control. Our expert team uses time-honored techniques to keep your property mole-free, sustainably and efficiently.</p>
-      <img src="farm_son.jpg" alt="Father and son working together on mole control on a farm" title="Family-run pest control business in action" loading="lazy">
-    </section>
-
-    <section id="services">
-      <h2>Our Services</h2>
-      <h3>Mole Control</h3>
-      <p>We offer tailored solutions for mole control on farms, gardens, and homes. Our services include trapping, removal, and preventative measures to keep mole populations in check.</p>
-
-      <h3>Rodent Control</h3>
-      <p>Effective rodent control for farms and homes, using safe and environmentally friendly methods to ensure your property is free from rats and mice.</p>
-      <img src="rat-Pest.jpg" alt="Rat control on a farm" title="Rat control services for farms" loading="lazy">
-    </section>
-
-    <section id="gallery">
-      <h2>Gallery - Mole Catching in Action</h2>
-      <div class="photo-gallery">
-        <figure>
-          <img src="farm_john_mole.jpg" alt="John holding freshly trapped moles on a Welsh farm" title="John's traditional mole catching on the farm" loading="lazy" />
-          <figcaption>John’s Mole Catch – Generations of Farm Expertise</figcaption>
-        </figure>
-
-        <figure>
-          <img src="moles_collage.jpg" alt="Multiple mole catches on different farms in Wales" title="Successful mole catches across Welsh farms" loading="lazy" />
-          <figcaption>Mole Catch Highlights</figcaption>
-        </figure>
-
-        <figure>
-          <img src="farm_moles.jpg" alt="Dead moles lined up on a Welsh farm after pest control visit" title="Traditional mole trapping results on a Welsh farm" loading="lazy" />
-          <figcaption>Farm Mole Trapping Results</figcaption>
-        </figure>
+  <section class="services" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <img src="farm_moles.jpg" alt="Mole Control" class="service-image">
+        <p>Mole Control</p>
       </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>If you need professional mole catching services, don’t hesitate to reach out! Contact us via phone or email, or fill out the form below.</p>
-      <form action="submit_form.php" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Welsh Town and Country - All Rights Reserved</p>
-    <div>
-      <a href="https://www.instagram.com" target="_blank"><img src="Instagram_icon.png" alt="Instagram logo"></a>
-      <a href="https://www.linkedin.com" target="_blank"><img src="linked-in.jpg" alt="LinkedIn logo"></a>
-      <a href="https://www.facebook.com" target="_blank"><img src="facebook_logo.png" alt="Facebook logo"></a>
+      <div class="service-item">
+        <img src="rat-Pest.jpg" alt="Rat Control" class="service-image">
+        <p>Rat Control</p>
+      </div>
+      <div class="service-item">
+        <img src="waspnest.jpg" alt="Wasp Nest Removal" class="service-image">
+        <p>Wasp Nest Removal</p>
+      </div>
     </div>
+  </section>
+
+  <section class="gallery-container" id="gallery">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-item">
+      <img src="farm_john_mole.jpg" alt="John with Mole Traps" class="gallery-image">
+      <p class="gallery-caption">John preparing mole traps on a Brecon farm</p>
+    </div>
+    <div class="gallery-item">
+      <img src="squrrielshed.jpg" alt="Squirrel in Shed" class="gallery-image">
+      <p class="gallery-caption">Squirrel infestation solved safely</p>
+    </div>
+    <div class="gallery-item">
+      <img src="rattrap3.jpg" alt="Humane Rat Trap" class="gallery-image">
+      <p class="gallery-caption">Effective rodent control</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <form class="contact-form">
+      <input type="text" class="input-field" placeholder="Your Name" required>
+      <input type="text" class="input-field" placeholder="Postcode" required>
+      <input type="tel" class="input-field" placeholder="Phone Number" required>
+      <textarea class="input-field" placeholder="Describe your pest problem..." required></textarea>
+      <button class="cta-button" type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <ul class="footer-nav-list">
+      <li><a href="#services" class="footer-nav-link">Services</a></li>
+      <li><a href="#gallery" class="footer-nav-link">Gallery</a></li>
+      <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+    </ul>
+    <div class="footer-social">
+      <a href="#" class="social-icon"><img src="facebook_logo.png" alt="Facebook"></a>
+      <a href="#" class="social-icon"><img src="tube-icon.jpg" alt="YouTube"></a>
+      <a href="#" class="social-icon"><img src="Instagram_icon.png" alt="Instagram"></a>
+    </div>
+    <p>&copy; 2025 Welsh Town and Country - All rights reserved.</p>
   </footer>
 </body>
 </html>
