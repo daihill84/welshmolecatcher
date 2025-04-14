@@ -29,6 +29,7 @@ body {
   text-align: center;
   height: 400px; /* Set header height */
   position: relative; /* Ensure overlay works */
+  filter: brightness(1.2); /* Increased brightness */
 }
 
 .site-header .logo {
