@@ -49,18 +49,6 @@ body {
   margin-bottom: 1em;
 }
 
-/* Dark overlay for header */
-.site-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* darkens the background for contrast */
-  z-index: -1; /* Behind content */
-}
-
 /* Sections */
 section {
   max-width: 1200px;
