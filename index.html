@@ -9,10 +9,10 @@
   <title>Welsh Mole Catcher | Farm Mole Control in Wales</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="desktop.css" />
-  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.23.2/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.23.2/babel.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
   <style>
     /* Minimal Tailwind CSS build for GitHub Pages */
     :root {
@@ -260,242 +260,250 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { useState } = React;
-    const motion = window.FramerMotion.motion; // Fixed Framer Motion import
+    // Wait for all scripts to load
+    window.addEventListener('load', () => {
+      const { useState } = React;
+      const motion = window.FramerMotion ? window.FramerMotion.motion : null;
 
-    const Navbar = () => (
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="bg-[#333] text-white p-4 sticky top-0 z-10 shadow-md"
-      >
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="text-xl font-bold">Welsh Mole Catcher</div>
-          <ul className="flex space-x-6">
-            <li><a href="#home" className="hover:text-[#cbb89d]">Home</a></li>
-            <li><a href="#services" className="hover:text-[#cbb89d]">Services</a></li>
-            <li><a href="#gallery" className="hover:text-[#cbb89d]">Gallery</a></li>
-            <li><a href="#contact" className="hover:text-[#cbb89d]">Contact</a></li>
-          </ul>
-        </div>
-      </motion.nav>
-    );
+      if (!motion) {
+        console.error("Framer Motion failed to load. Animations will be disabled.");
+        return; // Fallback: render without animations
+      }
 
-    const Header = () => (
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative flex flex-col items-center justify-center h-[400px] text-white bg-[url('moles_collage.jpg')] bg-cover bg-center shadow-inner text-center header-overlay"
-      >
-        <img src="logo.png" alt="Welsh Mole Catcher Logo" className="w-[120px] mb-4 rounded-xl" onError={(e) => { e.target.src = 'https://via.placeholder.com/120?text=Logo'; }} />
-        <h1 className="text-4xl md:text-5xl font-bold">Welsh Mole Catcher</h1>
-        <p className="text-lg md:text-xl mt-2 text-[#e0e0e0]">Traditional Mole Control for Farms & Rural Homes</p>
-      </motion.header>
-    );
-
-    const IntroSection = () => (
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-5xl mx-auto py-12 px-4"
-      >
-        <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Reliable Mole Catching Across Wales</h2>
-        <p className="text-lg text-[#3c3c3c]">
-          We specialize in traditional mole trapping across farms and countryside homes throughout South and Mid Wales. 
-          Our family-run business is rooted in rural life and understands the unique challenges landowners face.
-        </p>
-      </motion.section>
-    );
-
-    const ServicesSection = () => (
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        id="services"
-        className="max-w-5xl mx-auto py-12 px-4"
-      >
-        <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Control for Farms</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-[#3e2d20]">Mole Trapping</h3>
-            <p className="mt-2 text-[#3c3c3c]">
-              Using safe, traditional traps, we offer effective mole control that’s friendly to your land and livestock.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-[#3e2d20]">Other Pests</h3>
-            <p className="mt-2 text-[#3c3c3c]">
-              We also handle rats, mice, wasps, bees, and squirrels on farms and in rural homes.
-            </p>
-          </div>
-        </div>
-      </motion.section>
-    );
-
-    const GallerySection = () => {
-      const [selectedImage, setSelectedImage] = useState(null);
-      const images = [
-        { src: "moles_collage.jpg", alt: "Moles caught on Welsh farms", caption: "Mole Catch Highlights" },
-        { src: "farm_moles.jpg", alt: "Dead moles on a Welsh farm", caption: "Farm Results" },
-        { src: "farm_son.jpg", alt: "Father and son team mole trapping", caption: "Family Team" },
-        { src: "farm_john_mole.jpg", alt: "Mole catching expert in field", caption: "In The Field" },
-      ];
-
-      return (
-        <motion.section
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          id="gallery"
-          className="py-12 bg-[#f5f1ec] shadow-inner"
+      const Navbar = () => (
+        <motion.nav
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-[#333] text-white p-4 sticky top-0 z-10 shadow-md"
         >
-          <div className="max-w-5xl mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Catching in Action</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {images.map((img, index) => (
-                <motion.figure
-                  key={index}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer"
-                  onClick={() => setSelectedImage(img)}
-                >
-                  <img 
-                    src={img.src} 
-                    alt={img.alt} 
-                    className="w-full h-48 object-cover gallery-img" 
-                    onError={(e) => { e.target.src = 'https://via.placeholder.com/300x200?text=' + img.caption; }}
-                  />
-                  <figcaption className="text-center py-2 bg-[#eee6da] text-[#4a3b30]">{img.caption}</figcaption>
-                </motion.figure>
-              ))}
-            </div>
+          <div className="container mx-auto flex justify-between items-center">
+            <div className="text-xl font-bold">Welsh Mole Catcher</div>
+            <ul className="flex space-x-6">
+              <li><a href="#home" className="hover:text-[#cbb89d]">Home</a></li>
+              <li><a href="#services" className="hover:text-[#cbb89d]">Services</a></li>
+              <li><a href="#gallery" className="hover:text-[#cbb89d]">Gallery</a></li>
+              <li><a href="#contact" className="hover:text-[#cbb89d]">Contact</a></li>
+            </ul>
           </div>
-          {selectedImage && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="modal"
-              onClick={() => setSelectedImage(null)}
-            >
-              <img src={selectedImage.src} alt={selectedImage.alt} />
-            </motion.div>
-          )}
-        </motion.section>
+        </motion.nav>
       );
-    };
 
-    const ContactSection = () => {
-      const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+      const Header = () => (
+        <motion.header
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative flex flex-col items-center justify-center h-[400px] text-white bg-[url('moles_collage.jpg')] bg-cover bg-center shadow-inner text-center header-overlay"
+        >
+          <img src="logo.png" alt="Welsh Mole Catcher Logo" className="w-[120px] mb-4 rounded-xl" onError={(e) => { e.target.src = 'https://via.placeholder.com/120?text=Logo'; }} />
+          <h1 className="text-4xl md:text-5xl font-bold">Welsh Mole Catcher</h1>
+          <p className="text-lg md:text-xl mt-2 text-[#e0e0e0]">Traditional Mole Control for Farms & Rural Homes</p>
+        </motion.header>
+      );
 
-      const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
-
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        alert("Form submitted! (Demo: No real submission.)");
-      };
-
-      return (
+      const IntroSection = () => (
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          id="contact"
           className="max-w-5xl mx-auto py-12 px-4"
         >
-          <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Get in Touch</h2>
-          <div className="bg-white p-6 rounded-xl shadow-md max-w-lg mx-auto">
-            <p className="text-[#3c3c3c] mb-4">
-              Call us at <a href="tel:07375303124" className="text-[#2c2c2c] hover:text-[#785f45]">07375 303124</a> or use the form below:
-            </p>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label className="block text-[#3c3c3c] mb-1" htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
-                  placeholder="Your name"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-[#3c3c3c] mb-1" htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
-                  placeholder="Your email"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-[#3c3c3c] mb-1" htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
-                  placeholder="How can we help?"
-                  rows="4"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#3e2d20] text-white p-2 rounded hover:bg-[#785f45] transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
+          <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Reliable Mole Catching Across Wales</h2>
+          <p className="text-lg text-[#3c3c3c]">
+            We specialize in traditional mole trapping across farms and countryside homes throughout South and Mid Wales. 
+            Our family-run business is rooted in rural life and understands the unique challenges landowners face.
+          </p>
+        </motion.section>
+      );
+
+      const ServicesSection = () => (
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          id="services"
+          className="max-w-5xl mx-auto py-12 px-4"
+        >
+          <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Control for Farms</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-[#3e2d20]">Mole Trapping</h3>
+              <p className="mt-2 text-[#3c3c3c]">
+                Using safe, traditional traps, we offer effective mole control that’s friendly to your land and livestock.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-[#3e2d20]">Other Pests</h3>
+              <p className="mt-2 text-[#3c3c3c]">
+                We also handle rats, mice, wasps, bees, and squirrels on farms and in rural homes.
+              </p>
+            </div>
           </div>
         </motion.section>
       );
-    };
 
-    const Footer = () => (
-      <motion.footer
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="bg-[#333] text-white py-6 text-center"
-      >
-        <p>© 2025 Welsh Mole Catcher | <a href="https://www.welshtownandcountry.co.uk" className="text-[#cbb89d] hover:underline">Back to Main Site</a></p>
-      </motion.footer>
-    );
+      const GallerySection = () => {
+        const [selectedImage, setSelectedImage] = useState(null);
+        const images = [
+          { src: "moles_collage.jpg", alt: "Moles caught on Welsh farms", caption: "Mole Catch Highlights" },
+          { src: "farm_moles.jpg", alt: "Dead moles on a Welsh farm", caption: "Farm Results" },
+          { src: "farm_son.jpg", alt: "Father and son team mole trapping", caption: "Family Team" },
+          { src: "farm_john_mole.jpg", alt: "Mole catching expert in field", caption: "In The Field" },
+        ];
 
-    const App = () => (
-      <div>
-        <Navbar />
-        <Header />
-        <IntroSection />
-        <ServicesSection />
-        <GallerySection />
-        <ContactSection />
-        <Footer />
-      </div>
-    );
+        return (
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            id="gallery"
+            className="py-12 bg-[#f5f1ec] shadow-inner"
+          >
+            <div className="max-w-5xl mx-auto px-4">
+              <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Catching in Action</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {images.map((img, index) => (
+                  <motion.figure
+                    key={index}
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer"
+                    onClick={() => setSelectedImage(img)}
+                  >
+                    <img 
+                      src={img.src} 
+                      alt={img.alt} 
+                      className="w-full h-48 object-cover gallery-img" 
+                      onError={(e) => { e.target.src = 'https://via.placeholder.com/300x200?text=' + img.caption; }}
+                    />
+                    <figcaption className="text-center py-2 bg-[#eee6da] text-[#4a3b30]">{img.caption}</figcaption>
+                  </motion.figure>
+                ))}
+              </div>
+            </div>
+            {selectedImage && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="modal"
+                onClick={() => setSelectedImage(null)}
+              >
+                <img src={selectedImage.src} alt={selectedImage.alt} />
+              </motion.div>
+            )}
+          </motion.section>
+        );
+      };
 
-    try {
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(<App />);
-    } catch (e) {
-      console.error("Rendering failed:", e);
-    }
+      const ContactSection = () => {
+        const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+        const handleChange = (e) => {
+          setFormData({ ...formData, [e.target.name]: e.target.value });
+        };
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert("Form submitted! (Demo: No real submission.)");
+        };
+
+        return (
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            id="contact"
+            className="max-w-5xl mx-auto py-12 px-4"
+          >
+            <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Get in Touch</h2>
+            <div className="bg-white p-6 rounded-xl shadow-md max-w-lg mx-auto">
+              <p className="text-[#3c3c3c] mb-4">
+                Call us at <a href="tel:07375303124" className="text-[#2c2c2c] hover:text-[#785f45]">07375 303124</a> or use the form below:
+              </p>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4">
+                  <label className="block text-[#3c3c3c] mb-1" htmlFor="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-[#3c3c3c] mb-1" htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
+                    placeholder="Your email"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-[#3c3c3c] mb-1" htmlFor="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
+                    placeholder="How can we help?"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-[#3e2d20] text-white p-2 rounded hover:bg-[#785f45] transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </motion.section>
+        );
+      };
+
+      const Footer = () => (
+        <motion.footer
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="bg-[#333] text-white py-6 text-center"
+        >
+          <p>© 2025 Welsh Mole Catcher | <a href="https://www.welshtownandcountry.co.uk" className="text-[#cbb89d] hover:underline">Back to Main Site</a></p>
+        </motion.footer>
+      );
+
+      const App = () => (
+        <div>
+          <Navbar />
+          <Header />
+          <IntroSection />
+          <ServicesSection />
+          <GallerySection />
+          <ContactSection />
+          <Footer />
+        </div>
+      );
+
+      try {
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+      } catch (e) {
+        console.error("Rendering failed:", e);
+      }
+    });
   </script>
 </body>
 </html>
