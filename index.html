@@ -3,506 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Traditional mole catching and pest control in Welsh countryside. Reliable, family-run service for farms and rural homes." />
+  <meta name="description" content="Expert mole catching and pest control in Wales. Family-run service for farms and rural homes using traditional methods. Call 07375 303124!" />
   <meta name="keywords" content="mole catching Wales, pest control farm, Welsh mole catcher, rural pest services, traditional mole traps" />
   <meta name="author" content="Welsh Mole Catcher" />
   <title>Welsh Mole Catcher | Farm Mole Control in Wales</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="desktop.css" />
-  <script defer src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.23.2/babel.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
-  <style>
-    /* Minimal Tailwind CSS build for GitHub Pages */
-    :root {
-      --color-white: #fff;
-      --color-gray-100: #f5f1ec;
-      --color-gray-600: #3c3c3c;
-      --color-gray-800: #333;
-      --color-brown-700: #3e2d20;
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      width: 100%;
-      max-width: 1280px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .mx-auto {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .flex {
-      display: flex;
-    }
-    .flex-col {
-      flex-direction: column;
-    }
-    .items-center {
-      align-items: center;
-    }
-    .justify-center {
-      justify-content: center;
-    }
-    .justify-between {
-      justify-content: space-between;
-    }
-    .space-x-6 > * + * {
-      margin-left: 1.5rem;
-    }
-    .grid {
-      display: grid;
-    }
-    .grid-cols-1 {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    .sm\:grid-cols-2 {
-      @media (min-width: 640px) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    .lg\:grid-cols-4 {
-      @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-    }
-    .gap-6 {
-      gap: 1.5rem;
-    }
-    .gap-8 {
-      gap: 2rem;
-    }
-    .bg-white {
-      background-color: var(--color-white);
-    }
-    .bg-\[\#f5f1ec\] {
-      background-color: var(--color-gray-100);
-    }
-    .bg-\[\#333\] {
-      background-color: var(--color-gray-800);
-    }
-    .bg-\[\#3e2d20\] {
-      background-color: var(--color-brown-700);
-    }
-    .bg-\[\#eee6da\] {
-      background-color: #eee6da;
-    }
-    .text-white {
-      color: var(--color-white);
-    }
-    .text-\[\#e0e0e0\] {
-      color: #e0e0e0;
-    }
-    .text-\[\#3c3c3c\] {
-      color: var(--color-gray-600);
-    }
-    .text-\[\#3e2d20\] {
-      color: var(--color-brown-700);
-    }
-    .text-\[\#4a3b30\] {
-      color: #4a3b30;
-    }
-    .text-\[\#2c2c2c\] {
-      color: #2c2c2c;
-    }
-    .hover\:text-\[\#cbb89d\]:hover {
-      color: #cbb89d;
-    }
-    .hover\:text-\[\#785f45\]:hover {
-      color: #785f45;
-    }
-    .hover\:bg-\[\#785f45\]:hover {
-      background-color: #785f45;
-    }
-    .text-lg {
-      font-size: 1.125rem;
-    }
-    .text-xl {
-      font-size: 1.25rem;
-    }
-    .text-3xl {
-      font-size: 1.875rem;
-    }
-    .text-4xl {
-      font-size: 2.25rem;
-    }
-    .md\:text-5xl {
-      @media (min-width: 768px) {
-        font-size: 3rem;
-      }
-    }
-    .md\:text-xl {
-      @media (min-width: 768px) {
-        font-size: 1.25rem;
-      }
-    }
-    .font-bold {
-      font-weight: 700;
-    }
-    .font-semibold {
-      font-weight: 600;
-    }
-    .p-4 {
-      padding: 1rem;
-    }
-    .p-6 {
-      padding: 1.5rem;
-    }
-    .py-2 {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-    .py-6 {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
-    .py-12 {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-    .px-4 {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    .mb-4 {
-      margin-bottom: 1rem;
-    }
-    .mt-2 {
-      margin-top: 0.5rem;
-    }
-    .h-48 {
-      height: 12rem;
-    }
-    .h-\[400px\] {
-      height: 400px;
-    }
-    .w-full {
-      width: 100%;
-    }
-    .w-\[120px\] {
-      width: 120px;
-    }
-    .max-w-5xl {
-      max-width: 64rem;
-    }
-    .max-w-lg {
-      max-width: 32rem;
-    }
-    .rounded {
-      border-radius: 0.25rem;
-    }
-    .rounded-xl {
-      border-radius: 0.75rem;
-    }
-    .border {
-      border-width: 1px;
-    }
-    .border-\[\#cbb89d\] {
-      border-color: #cbb89d;
-    }
-    .border-b-2 {
-      border-bottom-width: 2px;
-    }
-    .focus\:outline-none:focus {
-      outline: none;
-    }
-    .focus\:border-\[\#785f45\]:focus {
-      border-color: #785f45;
-    }
-    .shadow-md {
-      box-shadow: var(--shadow-md);
-    }
-    .shadow-inner {
-      box-shadow: var(--shadow-inner);
-    }
-    .bg-cover {
-      background-size: cover;
-    }
-    .bg-center {
-      background-position: center;
-    }
-    .object-cover {
-      object-fit: cover;
-    }
-    .sticky {
-      position: sticky;
-    }
-    .top-0 {
-      top: 0;
-    }
-    .z-10 {
-      z-index: 10;
-    }
-    .cursor-pointer {
-      cursor: pointer;
-    }
-    .text-center {
-      text-align: center;
-    }
-    .inline-block {
-      display: inline-block;
-    }
-    .transition-colors {
-      transition: color 0.3s ease, background-color 0.3s ease;
-    }
-    .hover\:underline:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Welsh Mole Catcher",
+    "description": "Traditional mole catching and pest control in Welsh countryside.",
+    "telephone": "07375303124",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "South and Mid Wales",
+      "addressCountry": "UK"
+    },
+    "url": "https://your-username.github.io/your-repo/"
+  }
+  </script>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    // Wait for all scripts to load
-    window.addEventListener('load', () => {
-      const { useState } = React;
-      const motion = window.FramerMotion ? window.FramerMotion.motion : null;
+  <nav class="bg-[#333] text-white p-4 sticky top-0 z-10 shadow-md animate-slide-down">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold">Welsh Mole Catcher</div>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-[#cbb89d]">Home</a></li>
+        <li><a href="#services" class="hover:text-[#cbb89d]">Services</a></li>
+        <li><a href="#gallery" class="hover:text-[#cbb89d]">Gallery</a></li>
+        <li><a href="#contact" class="hover:text-[#cbb89d]">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-      if (!motion) {
-        console.error("Framer Motion failed to load. Animations will be disabled.");
-        return; // Fallback: render without animations
-      }
+  <header id="home" class="relative flex flex-col items-center justify-center h-[400px] text-white bg-[url('moles_collage.jpg')] bg-cover bg-center shadow-inner text-center header-overlay animate-fade-in">
+    <img src="logo.png" alt="Welsh Mole Catcher Logo" class="w-[120px] mb-4 rounded-xl" onerror="this.src='https://via.placeholder.com/120?text=Logo'" />
+    <h1 class="text-4xl md:text-5xl font-bold">Welsh Mole Catcher</h1>
+    <p class="text-lg md:text-xl mt-2 text-[#e0e0e0]">Traditional Mole Control for Farms & Rural Homes</p>
+  </header>
 
-      const Navbar = () => (
-        <motion.nav
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-[#333] text-white p-4 sticky top-0 z-10 shadow-md"
-        >
-          <div className="container mx-auto flex justify-between items-center">
-            <div className="text-xl font-bold">Welsh Mole Catcher</div>
-            <ul className="flex space-x-6">
-              <li><a href="#home" className="hover:text-[#cbb89d]">Home</a></li>
-              <li><a href="#services" className="hover:text-[#cbb89d]">Services</a></li>
-              <li><a href="#gallery" className="hover:text-[#cbb89d]">Gallery</a></li>
-              <li><a href="#contact" className="hover:text-[#cbb89d]">Contact</a></li>
-            </ul>
-          </div>
-        </motion.nav>
-      );
+  <section class="max-w-5xl mx-auto py-12 px-4 animate-fade-up">
+    <h2 class="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Reliable Mole Catching Across Wales</h2>
+    <p class="text-lg text-[#3c3c3c]">
+      We specialize in traditional mole trapping across farms and countryside homes throughout South and Mid Wales. 
+      Our family-run business is rooted in rural life and understands the unique challenges landowners face.
+    </p>
+  </section>
 
-      const Header = () => (
-        <motion.header
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative flex flex-col items-center justify-center h-[400px] text-white bg-[url('moles_collage.jpg')] bg-cover bg-center shadow-inner text-center header-overlay"
-        >
-          <img src="logo.png" alt="Welsh Mole Catcher Logo" className="w-[120px] mb-4 rounded-xl" onError={(e) => { e.target.src = 'https://via.placeholder.com/120?text=Logo'; }} />
-          <h1 className="text-4xl md:text-5xl font-bold">Welsh Mole Catcher</h1>
-          <p className="text-lg md:text-xl mt-2 text-[#e0e0e0]">Traditional Mole Control for Farms & Rural Homes</p>
-        </motion.header>
-      );
+  <section id="services" class="max-w-5xl mx-auto py-12 px-4 animate-fade-up">
+    <h2 class="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Control for Farms</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-bold text-[#3e2d20]">Mole Trapping</h3>
+        <p class="mt-2 text-[#3c3c3c]">
+          Using safe, traditional traps, we offer effective mole control that’s friendly to your land and livestock.
+        </p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-bold text-[#3e2d20]">Other Pests</h3>
+        <p class="mt-2 text-[#3c3c3c]">
+          We also handle rats, mice, wasps, bees, and squirrels on farms and in rural homes.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      const IntroSection = () => (
-        <motion.section
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto py-12 px-4"
-        >
-          <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Reliable Mole Catching Across Wales</h2>
-          <p className="text-lg text-[#3c3c3c]">
-            We specialize in traditional mole trapping across farms and countryside homes throughout South and Mid Wales. 
-            Our family-run business is rooted in rural life and understands the unique challenges landowners face.
-          </p>
-        </motion.section>
-      );
+  <section id="gallery" class="py-12 bg-[#f5f1ec] shadow-inner animate-fade-up">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Catching in Action</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <figure class="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer gallery-item" data-img="moles_collage.jpg" data-alt="Moles caught on Welsh farms">
+          <img src="moles_collage.jpg" alt="Moles caught on Welsh farms" class="w-full h-48 object-cover gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=Mole+Catch+Highlights'" />
+          <figcaption class="text-center py-2 bg-[#eee6da] text-[#4a3b30]">Mole Catch Highlights</figcaption>
+        </figure>
+        <figure class="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer gallery-item" data-img="farm_moles.jpg" data-alt="Dead moles on a Welsh farm">
+          <img src="farm_moles.jpg" alt="Dead moles on a Welsh farm" class="w-full h-48 object-cover gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=Farm+Results'" />
+          <figcaption class="text-center py-2 bg-[#eee6da] text-[#4a3b30]">Farm Results</figcaption>
+        </figure>
+        <figure class="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer gallery-item" data-img="farm_son.jpg" data-alt="Father and son team mole trapping">
+          <img src="farm_son.jpg" alt="Father and son team mole trapping" class="w-full h-48 object-cover gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=Family+Team'" />
+          <figcaption class="text-center py-2 bg-[#eee6da] text-[#4a3b30]">Family Team</figcaption>
+        </figure>
+        <figure class="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer gallery-item" data-img="farm_john_mole.jpg" data-alt="Mole catching expert in field">
+          <img src="farm_john_mole.jpg" alt="Mole catching expert in field" class="w-full h-48 object-cover gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=In+The+Field'" />
+          <figcaption class="text-center py-2 bg-[#eee6da] text-[#4a3b30]">In The Field</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div id="modal" class="modal hidden">
+      <img id="modal-img" src="" alt="" />
+    </div>
+  </section>
 
-      const ServicesSection = () => (
-        <motion.section
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          id="services"
-          className="max-w-5xl mx-auto py-12 px-4"
-        >
-          <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Control for Farms</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-bold text-[#3e2d20]">Mole Trapping</h3>
-              <p className="mt-2 text-[#3c3c3c]">
-                Using safe, traditional traps, we offer effective mole control that’s friendly to your land and livestock.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-bold text-[#3e2d20]">Other Pests</h3>
-              <p className="mt-2 text-[#3c3c3c]">
-                We also handle rats, mice, wasps, bees, and squirrels on farms and in rural homes.
-              </p>
-            </div>
-          </div>
-        </motion.section>
-      );
-
-      const GallerySection = () => {
-        const [selectedImage, setSelectedImage] = useState(null);
-        const images = [
-          { src: "moles_collage.jpg", alt: "Moles caught on Welsh farms", caption: "Mole Catch Highlights" },
-          { src: "farm_moles.jpg", alt: "Dead moles on a Welsh farm", caption: "Farm Results" },
-          { src: "farm_son.jpg", alt: "Father and son team mole trapping", caption: "Family Team" },
-          { src: "farm_john_mole.jpg", alt: "Mole catching expert in field", caption: "In The Field" },
-        ];
-
-        return (
-          <motion.section
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            id="gallery"
-            className="py-12 bg-[#f5f1ec] shadow-inner"
-          >
-            <div className="max-w-5xl mx-auto px-4">
-              <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Mole Catching in Action</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {images.map((img, index) => (
-                  <motion.figure
-                    key={index}
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer"
-                    onClick={() => setSelectedImage(img)}
-                  >
-                    <img 
-                      src={img.src} 
-                      alt={img.alt} 
-                      className="w-full h-48 object-cover gallery-img" 
-                      onError={(e) => { e.target.src = 'https://via.placeholder.com/300x200?text=' + img.caption; }}
-                    />
-                    <figcaption className="text-center py-2 bg-[#eee6da] text-[#4a3b30]">{img.caption}</figcaption>
-                  </motion.figure>
-                ))}
-              </div>
-            </div>
-            {selectedImage && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="modal"
-                onClick={() => setSelectedImage(null)}
-              >
-                <img src={selectedImage.src} alt={selectedImage.alt} />
-              </motion.div>
-            )}
-          </motion.section>
-        );
-      };
-
-      const ContactSection = () => {
-        const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-
-        const handleChange = (e) => {
-          setFormData({ ...formData, [e.target.name]: e.target.value });
-        };
-
-        const handleSubmit = (e) => {
-          e.preventDefault();
-          alert("Form submitted! (Demo: No real submission.)");
-        };
-
-        return (
-          <motion.section
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            id="contact"
-            className="max-w-5xl mx-auto py-12 px-4"
-          >
-            <h2 className="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Get in Touch</h2>
-            <div className="bg-white p-6 rounded-xl shadow-md max-w-lg mx-auto">
-              <p className="text-[#3c3c3c] mb-4">
-                Call us at <a href="tel:07375303124" className="text-[#2c2c2c] hover:text-[#785f45]">07375 303124</a> or use the form below:
-              </p>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                  <label className="block text-[#3c3c3c] mb-1" htmlFor="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-[#3c3c3c] mb-1" htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
-                    placeholder="Your email"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-[#3c3c3c] mb-1" htmlFor="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
-                    placeholder="How can we help?"
-                    rows="4"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#3e2d20] text-white p-2 rounded hover:bg-[#785f45] transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </motion.section>
-        );
-      };
-
-      const Footer = () => (
-        <motion.footer
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-[#333] text-white py-6 text-center"
-        >
-          <p>© 2025 Welsh Mole Catcher | <a href="https://www.welshtownandcountry.co.uk" className="text-[#cbb89d] hover:underline">Back to Main Site</a></p>
-        </motion.footer>
-      );
-
-      const App = () => (
-        <div>
-          <Navbar />
-          <Header />
-          <IntroSection />
-          <ServicesSection />
-          <GallerySection />
-          <ContactSection />
-          <Footer />
+  <section id="contact" class="max-w-5xl mx-auto py-12 px-4 animate-fade-up">
+    <h2 class="text-3xl font-semibold text-[#3e2d20] border-b-2 border-[#cbb89d] inline-block mb-4">Get in Touch</h2>
+    <div class="bg-white p-6 rounded-xl shadow-md max-w-lg mx-auto">
+      <p class="text-[#3c3c3c] mb-4">
+        Call us at <a href="tel:07375303124" class="text-[#2c2c2c] hover:text-[#785f45]">07375 303124</a> or use the form below:
+      </p>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="mb-4">
+          <label class="block text-[#3c3c3c] mb-1" for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
+            placeholder="Your name"
+            required
+          />
         </div>
-      );
+        <div class="mb-4">
+          <label class="block text-[#3c3c3c] mb-1" for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
+            placeholder="Your email"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-[#3c3c3c] mb-1" for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            class="w-full p-2 border rounded border-[#cbb89d] focus:outline-none focus:border-[#785f45]"
+            placeholder="How can we help?"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-[#3e2d20] text-white p-2 rounded hover:bg-[#785f45] transition-colors"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
 
-      try {
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(<App />);
-      } catch (e) {
-        console.error("Rendering failed:", e);
-      }
+  <footer class="bg-[#333] text-white py-6 text-center animate-fade-in">
+    <p>© 2025 Welsh Mole Catcher | <a href="https://www.welshtownandcountry.co.uk" class="text-[#cbb89d] hover:underline">Back to Main Site</a></p>
+  </footer>
+
+  <script>
+    // Simple modal functionality without React
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.getAttribute('data-img');
+        const imgAlt = item.getAttribute('data-alt');
+        modalImg.src = imgSrc;
+        modalImg.alt = imgAlt;
+        modal.classList.remove('hidden');
+        modal.classList.add('animate-fade-in');
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.classList.add('hidden');
     });
   </script>
 </body>
